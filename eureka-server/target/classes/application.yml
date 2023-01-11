@@ -1,0 +1,15 @@
+server:
+  port: ${PORT:8761}
+
+eureka:
+  instance:
+    hostname: ${EUREKA_HOSTNAME:192.168.1.159}
+#    hostname: ${EUREKA_HOSTNAME:p-eureka-server.herokuapp.com}
+  #    prefer-ip-address: true
+       
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://${eureka.instance.hostname}/eureka/}
+#      defaultZone: ${EUREKA_URI:https://${eureka.instance.hostname}/eureka/}
